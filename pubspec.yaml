@@ -29,6 +29,18 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
+  # Google fonts
+  google_fonts: ^1.1.2
+
+  # Bloc
+  bloc: ^6.1.1
+  flutter_bloc: ^6.1.1
+  
+  # Equality check for class objects
+  equatable: ^1.2.5
+  # Synchronization
+  synchronized: ^2.2.0+2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
