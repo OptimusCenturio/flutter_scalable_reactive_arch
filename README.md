@@ -58,6 +58,8 @@ The `cart` and `catalog` sections are part of the shopping cart, but their struc
 │   │   └── ...
 │   ├── localization.dart
 │   └── main.dart
+│   ├── repository
+│   │   └── repository.dart
 │   ├── theme
 │   │   ├── colors.dart
 │   │   ├── config.dart
