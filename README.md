@@ -1,28 +1,19 @@
 # Flutter Scalable Reactive App Architecture
 
-This is an example of a scalable and reactive Flutter mobile / web app architecture, based on experience of various projects.
+This is an example of a scalable and reactive Flutter web / mobile app architecture, based on experience of various projects.
 
 ## Getting Started
 
-This architecture can be a starting point for a Flutter project.
+This architecture can be a starting point for a medium or big Flutter project.
 
 The architecture includes the following design patterns and packages:
 
-- BLoC
 - RxDart
+- BLoC
 
 ## Project Structure
 ### Flutter shopping cart example
 The `cart` and `catalog` sections are part of the shopping cart, but their structure can be used as a template for other sections.
-> The structure of the sections `cart`, `catalog` is a template for others.
-
-> App localization: `localization.dart` and `lang` directory
-
-> Global `bloc_observer.dart`
-
-> Global `functions` list
-
-> App global `styles` like `colors.dart`, `widgets.dart` etc
 
 ```txt
 ├── lib
@@ -67,9 +58,32 @@ The `cart` and `catalog` sections are part of the shopping cart, but their struc
 │   │   └── ...
 │   ├── localization.dart
 │   └── main.dart
-│   ├── style
+│   ├── theme
 │   │   ├── colors.dart
+│   │   ├── config.dart
+│   │   ├── custom_theme.dart
 │   │   └── widgets.dart
 ├── pubspec.lock
 ├── pubspec.yaml
+```
+
+### What packages do we need
+Add the following dependencies to `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  ...
+
+  # Google fonts
+  google_fonts: ^1.1.2
+
+  # Bloc
+  bloc: ^6.1.1
+  flutter_bloc: ^6.1.1
+  
+  # Equality check for class objects
+  equatable: ^1.2.5
+  # Synchronization
+  synchronized: ^2.2.0+2
+  ...
 ```

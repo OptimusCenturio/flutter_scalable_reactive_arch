@@ -8,5 +8,5 @@ void main() {
   /// App bloc observer
   Bloc.observer = AppBlocObserver();
 
-  runApp(App());
+  runApp(MyApp());
 }
