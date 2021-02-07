@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_scalable_reactive_arch/theme/custom_theme.dart';
 
+import 'cart/cart.dart';
+import 'catalog/catalog.dart';
 import 'catalog/view/catalog_page.dart';
 import 'theme/config.dart';
 
@@ -29,13 +32,27 @@ class _MyAppState extends State {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: CustomTheme.lightTheme,
-      darkTheme: CustomTheme.darkTheme,
-      themeMode: currentTheme.currentTheme,
-      home: CatalogPage(title: 'Flutter Demo Catalog Page'),
-      debugShowCheckedModeBanner: false,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<CatalogBloc>(
+          create: (context) => CatalogBloc()..add(CatalogStarted()),
+        ),
+        BlocProvider<CartBloc>(
+          create: (context) => CartBloc()..add(CartStarted()),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: CustomTheme.lightTheme,
+        darkTheme: CustomTheme.darkTheme,
+        themeMode: currentTheme.currentTheme,
+        initialRoute: '/',
+        routes: {
+          '/': (context) => CatalogPage(),
+          '/cart': (context) => CartPage(),
+        },
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }

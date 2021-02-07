@@ -6,3 +6,8 @@ abstract class CatalogEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class CatalogStarted extends CatalogEvent {
+  @override
+  List<Object> get props => [];
+}

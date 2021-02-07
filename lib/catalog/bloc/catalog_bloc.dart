@@ -3,16 +3,29 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
+import '../models/catalog.dart';
+
 part 'catalog_event.dart';
 part 'catalog_state.dart';
 
 class CatalogBloc extends Bloc<CatalogEvent, CatalogState> {
-  CatalogBloc() : super(CatalogInitial());
+  CatalogBloc() : super(CatalogLoading());
 
   @override
-  Stream<CatalogState> mapEventToState(
-    CatalogEvent event,
-  ) async* {
-    // TODO: implement mapEventToState
+  Stream<CatalogState> mapEventToState(CatalogEvent event) async* {
+    if (event is CatalogStarted) {
+      yield* _mapCatalogStartedToState();
+    }
+  }
+
+  /// `CatalogStarted` event handler
+  Stream<CatalogState> _mapCatalogStartedToState() async* {
+    yield CatalogLoading();
+    try {
+      await Future<void>.delayed(const Duration(milliseconds: 500));
+      yield CatalogLoaded(Catalog());
+    } catch (_) {
+      yield CatalogError();
+    }
   }
 }
