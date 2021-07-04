@@ -2,9 +2,9 @@ import 'package:bloc/bloc.dart';
 
 class AppBlocObserver extends BlocObserver {
   @override
-  void onCreate(Cubit cubit) {
-    super.onCreate(cubit);
-    print('onCreate -- cubit: ${cubit.runtimeType}');
+  void onCreate(BlocBase blocBase) {
+    super.onCreate(blocBase);
+    print('onCreate -- blocBase: ${blocBase.runtimeType}');
   }
 
   @override
@@ -14,9 +14,9 @@ class AppBlocObserver extends BlocObserver {
   }
 
   @override
-  void onChange(Cubit cubit, Change change) {
-    super.onChange(cubit, change);
-    print('onChange -- cubit: ${cubit.runtimeType}, change: $change');
+  void onChange(BlocBase blocBase, Change change) {
+    super.onChange(blocBase, change);
+    print('onChange -- blocBase: ${blocBase.runtimeType}, change: $change');
   }
 
   @override
@@ -26,14 +26,14 @@ class AppBlocObserver extends BlocObserver {
   }
 
   @override
-  void onError(Cubit cubit, Object error, StackTrace stackTrace) {
-    print('onError -- cubit: ${cubit.runtimeType}, error: $error');
-    super.onError(cubit, error, stackTrace);
+  void onError(BlocBase blocBase, Object error, StackTrace stackTrace) {
+    print('onError -- blocBase: ${blocBase.runtimeType}, error: $error');
+    super.onError(blocBase, error, stackTrace);
   }
 
   @override
-  void onClose(Cubit cubit) {
-    super.onClose(cubit);
-    print('onClose -- cubit: ${cubit.runtimeType}');
+  void onClose(BlocBase blocBase) {
+    super.onClose(blocBase);
+    print('onClose -- blocBase: ${blocBase.runtimeType}');
   }
 }

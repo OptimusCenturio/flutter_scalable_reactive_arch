@@ -77,15 +77,15 @@ dependencies:
   ...
 
   # Google fonts
-  google_fonts: ^1.1.2
+  google_fonts: ^2.1.0
 
   # Bloc
-  bloc: ^6.1.1
-  flutter_bloc: ^6.1.1
+  bloc: ^7.0.0
+  flutter_bloc: ^7.0.1
   
   # Equality check for class objects
-  equatable: ^1.2.5
+  equatable: ^2.0.3
   # Synchronization
-  synchronized: ^2.2.0+2
+  synchronized: ^3.0.0
   ...
 ```

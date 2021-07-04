@@ -20,10 +20,10 @@ class _CatalogPageState extends State<CatalogPage> {
       appBar: AppBar(
         title: Text('Catalog'),
         actions: [
-          /// Toogle app theme
+          /// Toggle app theme
           IconButton(
             icon: Icon(Icons.brightness_4),
-            tooltip: 'Toogle app theme',
+            tooltip: 'Toggle app theme',
             onPressed: () => currentTheme.toggleTheme(),
           ),
 
@@ -98,11 +98,10 @@ class _AddButton extends StatelessWidget {
           return const CircularProgressIndicator();
         }
         if (state is CartLoaded) {
-          return FlatButton(
+          return TextButton(
             onPressed: state.cart.items.contains(item)
                 ? null
                 : () => context.read<CartBloc>().add(CartItemAdded(item)),
-            splashColor: theme.primaryColor,
             child: state.cart.items.contains(item)
                 ? Icon(Icons.check, semanticLabel: 'ADDED', color: theme.buttonColor)
                 : Text('ADD', style: theme.textTheme.button),

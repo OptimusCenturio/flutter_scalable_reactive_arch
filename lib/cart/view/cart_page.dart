@@ -88,13 +88,13 @@ class _CartTotal extends StatelessWidget {
             const SizedBox(width: 24),
 
             /// Buy button
-            FlatButton(
+            TextButton(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Buying not supported yet.')),
                 );
               },
-              color: Colors.white,
+              style: TextButton.styleFrom(backgroundColor: Colors.white),
               child: const Text('BUY'),
             ),
           ],
